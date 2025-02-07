@@ -49,4 +49,4 @@
 3. Since one of the features is **script text**, which requires **semantic understanding**, advanced transformer models like **BERT/DistilBERT** could improve predictions.
 4. **Limited dataset**: Results could be improved with more data samples. **Few-shot learning** could be applied using advanced models, or **LLMs could be fine-tuned** with at least 30 samples.
 5. The **enhanced script did not improve audience retention rates**, possibly because the **LLM is not fine-tuned for this specific task**. To address this, an **AI agent could be built using Langraph** to enhance intro hooks effectively.
-6. The **code complexity** could be optimized for better **time and space efficiency**.
+6. The **code complexity** could be optimized for better **time and space efficiency**..
