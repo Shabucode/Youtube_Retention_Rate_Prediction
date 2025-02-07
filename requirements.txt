@@ -1,0 +1,11 @@
+pandas
+numpy
+mlflow
+scikit-learn
+ipykernel
+xgboost
+seaborn
+matplotlib
+python-docx
+langchain
+langchain-community
