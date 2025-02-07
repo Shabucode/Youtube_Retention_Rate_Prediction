@@ -1,85 +1,56 @@
+# YouTube Video Retention Rate Prediction with Machine Learning Using Previous Data
 
+## Step 1: (Task 2)
 
-YouTube Video Retention Rate Prediction with Machine Learning Using Previous Data
+- Read the video scripts and retention data for the training videos.
+- Segment the script based on the video position and create a dataset for predicting the retention rate using the following features:
+  - Video position
+  - Script segments
+- The dataset is saved in **"full_retention_data_with_video_id.csv"**.
+- Calculate video retention position timestamps based on the video length for 100 script segments.
+- Visualize **"Retention Rate vs Script Segments"**.
 
-Step 1: (Task 2)
+## Step 2: (Task 2)
 
-Read the video scripts and the retention data for the training videos.
+- Convert the scripts into embeddings.
+- Train the model using the following features:
+  - Script embeddings
+  - Timestamp
+  - "Compared to other videos (%)"
+- Predict the **retention rate** as the target variable.
+- Make inferences for **Video A** after and before the first six timestamps.
+- Before inferencing for Video A, generate the script segments and their embeddings.
 
-Segment the script based on the video position and create a dataset for predicting the retention rate with the following features:
+## Step 3: (Task 2)
 
-Video position
+- Repeat Step 2 with the following features:
+  - Script embeddings
+  - Timestamp
+  - Retention rates
+- Predict **"Compared to other videos (%)"** as the target variable for Video A after and before the first six timestamps.
+- The following file contains predictions of retention rate and "Compared to other videos (%)" for Video A with the original script:
+  - **"VIDEO_A_Predictions_Filled_Original_Script.csv"**
 
-Script segments
+## Step 4: (Task 3)
 
-The dataset is saved in "full_retention_data_with_video_id.csv".
+- Identify the **intro segment** from Video A.
+- Use an **LLM** to enhance the intro script.
 
-Video retention position timestamps are calculated based on the video length for 100 script segments.
+## Step 5: (Task 3)
 
-Visualizations of "Retention Rate vs Script Segments" are showcased.
+- Repeat Steps 2 and 3 with the **enhanced script**.
+- The results are saved in the following file:
+  - **"Video_Predictions_filled_altered_intro.xlsx"**
 
-Step 2: (Task 2)
+## Drawbacks and Improvements Due to Time and Resource Constraints
 
-Convert the scripts into embeddings.
+1. **State-of-the-art embeddings** could be employed for better results.
+2. Similar to **Task 1**, **MLflow** could be used to track various model trials and select the best one.
+3. Since one of the features is **script text**, which requires **semantic understanding**, advanced transformer models like **BERT/DistilBERT** could improve predictions.
+4. **Limited dataset**: Results could be improved with more data samples. **Few-shot learning** could be applied using advanced models, or **LLMs could be fine-tuned** with at least 30 samples.
+5. The **enhanced script did not improve audience retention rates**, possibly because the **LLM is not fine-tuned for this specific task**. To address this, an **AI agent could be built using Langraph** to enhance intro hooks effectively.
+6. The **code complexity** could be optimized for better **time and space efficiency**.
 
-Train the model with the following features:
-
-Script embeddings
-
-Timestamp
-
-"Compared to other videos (%)"
-
-Predict the target variable: Retention rate.
-
-Generate inferences for Video A after and before the first six timestamps.
-
-Before inferencing for Video A, the script segments and their embeddings are generated.
-
-
-Step 3: (Task 2)
-
-Repeat Step 2 with the following features:
-
-Script embeddings
-
-Timestamp
-
-Retention rates
-
-Predict the target variable: "Compared to other videos (%)" for Video A after and before the first six timestamps.
-
-The following file consists of the predictions of retention rate and "Compared to other videos (%)" for Video A with the original script:
-
-"VIDEO_A_Predictions_Filled_Original_Script.csv"
-
-Step 4: (Task 3)
-
-Identify the intro segment from Video A.
-
-Use an LLM to enhance the intro script.
-
-Step 5: (Task 3)
-
-Repeat Step 2 and Step 3 with the enhanced script.
-
-The results are saved in the following file,
-
-"Video_Predictions_filled_altered_intro.xlsx"
-
-Drawbacks and Improvements Due to Time and Resource Constraints
-
-State-of-the-art embeddings could be employed for better results.
-
-As in Task 1, MLflow could be used for various model trials to select the best one.
-
-Since one of the features is the script, which requires semantic understanding, advanced transformer models like BERT/DistilBERT could be employed for more accurate predictions.
-
-Limited dataset: Results could be improved with more data samples. Few-shot learning could be used with advanced models, or LLMs could be fine-tuned with at least 30 samples.
-
-The enhanced script did not show improved audience retention rates because the LLM is not fine-tuned for such tasks. To address this, an AI agent could be built using Langraph to enhance the intro hooks effectively.
-
-The code complexity could be improved for better time and space efficiency.
 
 Youtube Video Retention Rate Prediction with Machine Learning using Previous Data
 
